@@ -1,0 +1,3 @@
+this is a column vector [1 2 3]
+this is a row vector [1; 2; 3]
+this is a list (v1, ..., vm)
