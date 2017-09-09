@@ -9,6 +9,9 @@ contexts:
   main:
     - match: \b(s\.t\.|such that|for all|there exists|E|ex|proof)\b
       scope: keyword.control.motes
+    # equation numberings
+    - match: \[\d+(\.\d+)?\]
+      scope: support.function.motes
     # start matrix
     - match: \[
       scope: keyword.control.motes
