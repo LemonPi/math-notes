@@ -7,8 +7,9 @@ scope: source.motes
 
 contexts:
   main:
+    # keywords
     - match: \b(s\.t\.|such that|for all|there exists|E|ex|proof)\b
-      scope: keyword.control.motes
+      scope: entity.name.motes
     # line breaks
     - match: ^(\-[\-\=]{2}.*)
       scope: support.function.motes
