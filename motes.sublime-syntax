@@ -12,9 +12,24 @@ contexts:
     # line breaks
     - match: ^(\-[\-\=]{2}.*)
       scope: support.function.motes
+    # ordered bullets
+    - match: ^([ \t]*[0-9a-z]+[\:\.\)]\)?\s(\w+\:)?)
+      scope: keyword.operator.notes
+      captures:
+        2: keyword.other.notes
+    # unordered bullets
+    - match: ^(\t*[\-\=\.]+\s(\w+\:)?)
+      scope: variable.language.notes
+      captures:
+        2: keyword.other.notes
     # equation numberings
     - match: \[\d+(\.\d+)?\]
       scope: support.function.motes
+    # highlights
+    - match: (\#+[^\#]*\#*)
+      scope: nothing.notes
+      captures:
+        1: variable.language.notes
     # start matrix
     - match: \[
       scope: keyword.control.motes
