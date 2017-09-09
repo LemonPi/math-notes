@@ -8,7 +8,7 @@ scope: source.motes
 contexts:
   main:
     # keywords
-    - match: \b(s\.t\.\s+|such that|for all|there exists|E|ex|proof)\b
+    - match: \b(s\.t\.\s+|iff|such that|for all|there exists|E|ex|proof)\b
       scope: entity.name.motes
     # line breaks
     - match: ^(\-[\-\=]{2}.*)
