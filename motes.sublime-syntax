@@ -9,6 +9,9 @@ contexts:
   main:
     - match: \b(s\.t\.|such that|for all|there exists|E|ex|proof)\b
       scope: keyword.control.motes
+    # line breaks
+    - match: ^(\-[\-\=]{2}.*)
+      scope: support.function.motes
     # equation numberings
     - match: \[\d+(\.\d+)?\]
       scope: support.function.motes
