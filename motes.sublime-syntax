@@ -7,7 +7,7 @@ scope: source.motes
 
 contexts:
   main:
-    - match: \b(s\.t\.|such that|for all|there exists|E)\b
+    - match: \b(s\.t\.|such that|for all|there exists|E|ex|proof)\b
       scope: keyword.control.motes
     # start matrix
     - match: \[
@@ -15,11 +15,17 @@ contexts:
       push: matrix
     # start list, has to have a comma somewhere
     # we lookahead to prevent consuming characters after the parenthesis
-    - match: (\()(?=.*,)
+    - match: (\()(?=[^)]*,)
       captures:
         # only colour the beginning parenthesis
         1: keyword.control.motes
       push: list
+    - match: \{
+      scope: keyword.control.motes
+      push: set
+    # empty lists/sets
+    - match: (\(\)|{\})
+      scope: keyword.control.motes
   matrix:
     - meta_content_scope: string.quoted.double.motes
     # end of a row
@@ -31,9 +37,19 @@ contexts:
       pop: true
   list:
     - meta_content_scope: string.quoted.double.motes
+    - include: main
     # separation
     - match: \,
       scope: constant.numeric.integer.motes
     - match: \)
+      scope: keyword.control.motes
+      pop: true
+  set:
+    - meta_content_scope: string.quoted.double.motes
+    - include: main
+    # separation
+    - match: \,
+      scope: constant.numeric.integer.motes
+    - match: \}
       scope: keyword.control.motes
       pop: true
