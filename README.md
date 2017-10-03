@@ -8,9 +8,9 @@ See example.motes
 
 ## Usage
 - [get package control](https://packagecontrol.io/installation)
-- `ctrl + shift + p` type and select `Add Repository`
-- copy paste the github URL into input and press enter
-- `ctrl + shift + p` type and select `Install Package`
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> type and select `Add Repository`
+- copy paste the github URL into input and press <kbd>Enter</kbd>
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> type and select `Install Package`
 - find math notes
 - restart sublime
 
